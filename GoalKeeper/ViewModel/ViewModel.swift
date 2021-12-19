@@ -125,14 +125,11 @@ class ViewModel: ObservableObject {
                 let fileURL = try fileURL()
                 guard let file = try? FileHandle(forReadingFrom: fileURL) else {
                     DispatchQueue.main.async {
-                        completion(.success([]))
+                        completion(.success(Area.loadingData))
                     }
                     return
                 }
-                var areas = try JSONDecoder().decode([Area].self, from: file.availableData)
-                if areas.isEmpty {
-                    areas = Area.loadingData
-                }
+                let areas = try JSONDecoder().decode([Area].self, from: file.availableData)
                 DispatchQueue.main.async {
                     completion(.success(areas))
                 }
