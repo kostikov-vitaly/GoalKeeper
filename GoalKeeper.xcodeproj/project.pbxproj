@@ -8,17 +8,60 @@
 
 /* Begin PBXBuildFile section */
 		D871D58B276E773F0020F437 /* GoalKeeperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D871D58A276E773F0020F437 /* GoalKeeperApp.swift */; };
-		D871D58D276E773F0020F437 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D871D58C276E773F0020F437 /* ContentView.swift */; };
+		D871D58D276E773F0020F437 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D871D58C276E773F0020F437 /* MainView.swift */; };
 		D871D58F276E77410020F437 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D871D58E276E77410020F437 /* Assets.xcassets */; };
 		D871D592276E77410020F437 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D871D591276E77410020F437 /* Preview Assets.xcassets */; };
+		D871D59B276E77760020F437 /* Prime.otf in Resources */ = {isa = PBXBuildFile; fileRef = D871D598276E77750020F437 /* Prime.otf */; };
+		D871D59C276E77760020F437 /* RubikMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D871D599276E77760020F437 /* RubikMedium.ttf */; };
+		D871D59D276E77760020F437 /* RubikRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D871D59A276E77760020F437 /* RubikRegular.ttf */; };
+		D871D5A3276E782F0020F437 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D871D5A2276E782F0020F437 /* ViewModel.swift */; };
+		D871D5A5276E78390020F437 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D871D5A4276E78390020F437 /* Model.swift */; };
+		D871D5A7276E78FD0020F437 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D871D5A6276E78FD0020F437 /* AppTheme.swift */; };
+		D871D5AA276E7AE10020F437 /* FontModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D871D5A9276E7AE10020F437 /* FontModifiers.swift */; };
+		D871D5AE276E7B820020F437 /* DayCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D871D5AD276E7B820020F437 /* DayCard.swift */; };
+		D871D5B0276E7F1A0020F437 /* ErrorAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D871D5AF276E7F1A0020F437 /* ErrorAlert.swift */; };
+		D871D5B3276E7F970020F437 /* AppViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D871D5B2276E7F970020F437 /* AppViewModifiers.swift */; };
+		D871D5B5276E80990020F437 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D871D5B4276E80990020F437 /* DayView.swift */; };
+		D871D5B8276E81290020F437 /* Main_AddGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D871D5B7276E81290020F437 /* Main_AddGoal.swift */; };
+		D871D5BA276E816D0020F437 /* AreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D871D5B9276E816D0020F437 /* AreaView.swift */; };
+		D871D5BD276E82460020F437 /* AreaRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D871D5BC276E82460020F437 /* AreaRowView.swift */; };
+		D871D5BF276E82B80020F437 /* GoalRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D871D5BE276E82B80020F437 /* GoalRowView.swift */; };
+		D871D5C1276E83CF0020F437 /* GoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D871D5C0276E83CF0020F437 /* GoalView.swift */; };
+		D871D5C3276E84630020F437 /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D871D5C2276E84630020F437 /* TaskView.swift */; };
+		D871D5C5276E865F0020F437 /* Area_AddGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D871D5C4276E865F0020F437 /* Area_AddGoal.swift */; };
+		D871D5C7276E87DF0020F437 /* SameNameError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D871D5C6276E87DF0020F437 /* SameNameError.swift */; };
+		D871D5C9276E88110020F437 /* EmptyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D871D5C8276E88110020F437 /* EmptyError.swift */; };
+		D871D5CB276E88F90020F437 /* Goal_AddTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = D871D5CA276E88F90020F437 /* Goal_AddTask.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D871D587276E773F0020F437 /* GoalKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoalKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D871D58A276E773F0020F437 /* GoalKeeperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalKeeperApp.swift; sourceTree = "<group>"; };
-		D871D58C276E773F0020F437 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D871D58C276E773F0020F437 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		D871D58E276E77410020F437 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D871D591276E77410020F437 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D871D598276E77750020F437 /* Prime.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Prime.otf; sourceTree = "<group>"; };
+		D871D599276E77760020F437 /* RubikMedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = RubikMedium.ttf; sourceTree = "<group>"; };
+		D871D59A276E77760020F437 /* RubikRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = RubikRegular.ttf; sourceTree = "<group>"; };
+		D871D59F276E77A80020F437 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D871D5A2276E782F0020F437 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		D871D5A4276E78390020F437 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		D871D5A6276E78FD0020F437 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
+		D871D5A9276E7AE10020F437 /* FontModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontModifiers.swift; sourceTree = "<group>"; };
+		D871D5AD276E7B820020F437 /* DayCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCard.swift; sourceTree = "<group>"; };
+		D871D5AF276E7F1A0020F437 /* ErrorAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorAlert.swift; sourceTree = "<group>"; };
+		D871D5B2276E7F970020F437 /* AppViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModifiers.swift; sourceTree = "<group>"; };
+		D871D5B4276E80990020F437 /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
+		D871D5B7276E81290020F437 /* Main_AddGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main_AddGoal.swift; sourceTree = "<group>"; };
+		D871D5B9276E816D0020F437 /* AreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaView.swift; sourceTree = "<group>"; };
+		D871D5BC276E82460020F437 /* AreaRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaRowView.swift; sourceTree = "<group>"; };
+		D871D5BE276E82B80020F437 /* GoalRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalRowView.swift; sourceTree = "<group>"; };
+		D871D5C0276E83CF0020F437 /* GoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalView.swift; sourceTree = "<group>"; };
+		D871D5C2276E84630020F437 /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
+		D871D5C4276E865F0020F437 /* Area_AddGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Area_AddGoal.swift; sourceTree = "<group>"; };
+		D871D5C6276E87DF0020F437 /* SameNameError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SameNameError.swift; sourceTree = "<group>"; };
+		D871D5C8276E88110020F437 /* EmptyError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyError.swift; sourceTree = "<group>"; };
+		D871D5CA276E88F90020F437 /* Goal_AddTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal_AddTask.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +95,11 @@
 			isa = PBXGroup;
 			children = (
 				D871D58A276E773F0020F437 /* GoalKeeperApp.swift */,
-				D871D58C276E773F0020F437 /* ContentView.swift */,
+				D871D59F276E77A80020F437 /* Info.plist */,
+				D871D59E276E777E0020F437 /* Fonts */,
+				D871D5AB276E7B020020F437 /* View */,
+				D871D5A0276E780F0020F437 /* ViewModel */,
+				D871D5A1276E781A0020F437 /* Model */,
 				D871D58E276E77410020F437 /* Assets.xcassets */,
 				D871D590276E77410020F437 /* Preview Content */,
 			);
@@ -65,6 +112,96 @@
 				D871D591276E77410020F437 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D871D59E276E777E0020F437 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D871D598276E77750020F437 /* Prime.otf */,
+				D871D599276E77760020F437 /* RubikMedium.ttf */,
+				D871D59A276E77760020F437 /* RubikRegular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		D871D5A0276E780F0020F437 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D871D5A2276E782F0020F437 /* ViewModel.swift */,
+				D871D5A6276E78FD0020F437 /* AppTheme.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D871D5A1276E781A0020F437 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D871D5A4276E78390020F437 /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D871D5A8276E7AAE0020F437 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				D871D5A9276E7AE10020F437 /* FontModifiers.swift */,
+				D871D5B2276E7F970020F437 /* AppViewModifiers.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		D871D5AB276E7B020020F437 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D871D5A8276E7AAE0020F437 /* Modifiers */,
+				D871D5B1276E7F1F0020F437 /* Errors */,
+				D871D5B4276E80990020F437 /* DayView.swift */,
+				D871D58C276E773F0020F437 /* MainView.swift */,
+				D871D5B9276E816D0020F437 /* AreaView.swift */,
+				D871D5C0276E83CF0020F437 /* GoalView.swift */,
+				D871D5C2276E84630020F437 /* TaskView.swift */,
+				D871D5B6276E81190020F437 /* Modal */,
+				D871D5AC276E7B710020F437 /* Cards */,
+				D871D5BB276E821F0020F437 /* Row */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D871D5AC276E7B710020F437 /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				D871D5AD276E7B820020F437 /* DayCard.swift */,
+			);
+			path = Cards;
+			sourceTree = "<group>";
+		};
+		D871D5B1276E7F1F0020F437 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				D871D5AF276E7F1A0020F437 /* ErrorAlert.swift */,
+				D871D5C6276E87DF0020F437 /* SameNameError.swift */,
+				D871D5C8276E88110020F437 /* EmptyError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		D871D5B6276E81190020F437 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				D871D5B7276E81290020F437 /* Main_AddGoal.swift */,
+				D871D5C4276E865F0020F437 /* Area_AddGoal.swift */,
+				D871D5CA276E88F90020F437 /* Goal_AddTask.swift */,
+			);
+			path = Modal;
+			sourceTree = "<group>";
+		};
+		D871D5BB276E821F0020F437 /* Row */ = {
+			isa = PBXGroup;
+			children = (
+				D871D5BC276E82460020F437 /* AreaRowView.swift */,
+				D871D5BE276E82B80020F437 /* GoalRowView.swift */,
+			);
+			path = Row;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +262,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D871D59D276E77760020F437 /* RubikRegular.ttf in Resources */,
+				D871D59B276E77760020F437 /* Prime.otf in Resources */,
+				D871D59C276E77760020F437 /* RubikMedium.ttf in Resources */,
 				D871D592276E77410020F437 /* Preview Assets.xcassets in Resources */,
 				D871D58F276E77410020F437 /* Assets.xcassets in Resources */,
 			);
@@ -137,8 +277,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D871D58D276E773F0020F437 /* ContentView.swift in Sources */,
+				D871D58D276E773F0020F437 /* MainView.swift in Sources */,
+				D871D5B5276E80990020F437 /* DayView.swift in Sources */,
+				D871D5C9276E88110020F437 /* EmptyError.swift in Sources */,
+				D871D5A3276E782F0020F437 /* ViewModel.swift in Sources */,
+				D871D5A7276E78FD0020F437 /* AppTheme.swift in Sources */,
+				D871D5AA276E7AE10020F437 /* FontModifiers.swift in Sources */,
 				D871D58B276E773F0020F437 /* GoalKeeperApp.swift in Sources */,
+				D871D5BF276E82B80020F437 /* GoalRowView.swift in Sources */,
+				D871D5C3276E84630020F437 /* TaskView.swift in Sources */,
+				D871D5C1276E83CF0020F437 /* GoalView.swift in Sources */,
+				D871D5B0276E7F1A0020F437 /* ErrorAlert.swift in Sources */,
+				D871D5B3276E7F970020F437 /* AppViewModifiers.swift in Sources */,
+				D871D5BD276E82460020F437 /* AreaRowView.swift in Sources */,
+				D871D5AE276E7B820020F437 /* DayCard.swift in Sources */,
+				D871D5BA276E816D0020F437 /* AreaView.swift in Sources */,
+				D871D5CB276E88F90020F437 /* Goal_AddTask.swift in Sources */,
+				D871D5C5276E865F0020F437 /* Area_AddGoal.swift in Sources */,
+				D871D5B8276E81290020F437 /* Main_AddGoal.swift in Sources */,
+				D871D5A5276E78390020F437 /* Model.swift in Sources */,
+				D871D5C7276E87DF0020F437 /* SameNameError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,7 +354,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -251,7 +409,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -272,6 +430,7 @@
 				DEVELOPMENT_TEAM = 3GWJJ878N9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GoalKeeper/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -301,6 +460,7 @@
 				DEVELOPMENT_TEAM = 3GWJJ878N9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GoalKeeper/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
