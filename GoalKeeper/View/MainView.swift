@@ -42,9 +42,8 @@ struct MainView: View {
                                         .foregroundColor(Color("BlackWhite"))
                                 })
                                 .padding(.top, 20)
-                                .accessibilityLabel("Change color scheme")
                         }
-                        Text("Today, 18 December")
+                        Text("Today, 19 December")
                             .font(.custom("Rubik Regular", size: 21))
                             .opacity(0.6)
                     }
@@ -82,7 +81,6 @@ struct MainView: View {
                     .onChange(of: scenePhase) { phase in
                         if phase == .inactive {
                             saveAction()
-                            print("ScenePhase is changed to inactive. Data was saved.")
                         }
                     }
                 }
@@ -103,7 +101,6 @@ struct MainView: View {
                         .frame(maxWidth: .infinity, maxHeight: 56)
                     }
                     .sheet(isPresented: $isPresented_Main_AddGoal) { Main_AddGoal() }
-                    .accessibilityLabel("Add new goal")
                 }
             }
         }

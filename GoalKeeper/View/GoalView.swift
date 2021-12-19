@@ -49,6 +49,7 @@ struct GoalView: View {
                         }
                     }
                     .onDelete { i in
+                        viewModel.removeTask(goal: goal, item: i)
                     }
                     .listRowBackground(Color("WhiteBlack"))
                 }

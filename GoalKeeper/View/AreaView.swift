@@ -46,6 +46,7 @@ struct AreaView: View {
                         }
                     }
                     .onDelete { i in
+                        viewModel.removeGoal(area: area, item: i)
                     }
                     .listRowBackground(Color("WhiteBlack"))
                 }

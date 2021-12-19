@@ -35,7 +35,6 @@ struct GoalKeeperApp: App {
                     case .failure(let error):
                         fatalError(error.localizedDescription)
                     case .success(let areas):
-                        print("App opened. Data was loaded.")
                         viewModel.areas = areas
                     }
                 }
