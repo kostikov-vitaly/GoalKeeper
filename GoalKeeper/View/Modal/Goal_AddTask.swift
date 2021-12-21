@@ -18,6 +18,11 @@ struct Goal_AddTask: View {
     @State private var taskName: String = ""
     @State private var isSameName = false
     @State private var isEmptyName = false
+    @State private var selectedRegularity: Regularity = .once
+    enum Regularity: String, CaseIterable {
+        case once = "Once"
+        case repeatable = "Repeatable"
+    }
     
     var body: some View {
         ZStack {
@@ -66,6 +71,19 @@ struct Goal_AddTask: View {
                         .padding(.leading, 22)
                         .padding(.trailing, 20)
                         .padding(.top, 4)
+                    
+                    Picker(selection: $selectedRegularity, label: EmptyView()) {
+                        ForEach(Regularity.allCases, id: \.self) {
+                            Text($0.rawValue)
+                        }
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
+                    .padding()
+                    
+                    Spacer()
+                    
+                    Text("\(selectedRegularity.rawValue)")
+                        .foregroundColor(Color("White"))
                     
                     Spacer()
                     

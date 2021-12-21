@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D854E4DD276FE4ED0029F30D /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D854E4DC276FE4ED0029F30D /* TaskView.swift */; };
 		D871D58B276E773F0020F437 /* GoalKeeperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D871D58A276E773F0020F437 /* GoalKeeperApp.swift */; };
 		D871D58D276E773F0020F437 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D871D58C276E773F0020F437 /* MainView.swift */; };
 		D871D58F276E77410020F437 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D871D58E276E77410020F437 /* Assets.xcassets */; };
@@ -27,7 +28,6 @@
 		D871D5BD276E82460020F437 /* AreaRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D871D5BC276E82460020F437 /* AreaRowView.swift */; };
 		D871D5BF276E82B80020F437 /* GoalRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D871D5BE276E82B80020F437 /* GoalRowView.swift */; };
 		D871D5C1276E83CF0020F437 /* GoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D871D5C0276E83CF0020F437 /* GoalView.swift */; };
-		D871D5C3276E84630020F437 /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D871D5C2276E84630020F437 /* TaskView.swift */; };
 		D871D5C5276E865F0020F437 /* Area_AddGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D871D5C4276E865F0020F437 /* Area_AddGoal.swift */; };
 		D871D5C7276E87DF0020F437 /* SameNameError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D871D5C6276E87DF0020F437 /* SameNameError.swift */; };
 		D871D5C9276E88110020F437 /* EmptyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D871D5C8276E88110020F437 /* EmptyError.swift */; };
@@ -35,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D854E4DC276FE4ED0029F30D /* TaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
 		D871D587276E773F0020F437 /* GoalKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoalKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D871D58A276E773F0020F437 /* GoalKeeperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalKeeperApp.swift; sourceTree = "<group>"; };
 		D871D58C276E773F0020F437 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -57,7 +58,6 @@
 		D871D5BC276E82460020F437 /* AreaRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaRowView.swift; sourceTree = "<group>"; };
 		D871D5BE276E82B80020F437 /* GoalRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalRowView.swift; sourceTree = "<group>"; };
 		D871D5C0276E83CF0020F437 /* GoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalView.swift; sourceTree = "<group>"; };
-		D871D5C2276E84630020F437 /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
 		D871D5C4276E865F0020F437 /* Area_AddGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Area_AddGoal.swift; sourceTree = "<group>"; };
 		D871D5C6276E87DF0020F437 /* SameNameError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SameNameError.swift; sourceTree = "<group>"; };
 		D871D5C8276E88110020F437 /* EmptyError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyError.swift; sourceTree = "<group>"; };
@@ -159,7 +159,7 @@
 				D871D58C276E773F0020F437 /* MainView.swift */,
 				D871D5B9276E816D0020F437 /* AreaView.swift */,
 				D871D5C0276E83CF0020F437 /* GoalView.swift */,
-				D871D5C2276E84630020F437 /* TaskView.swift */,
+				D854E4DC276FE4ED0029F30D /* TaskView.swift */,
 				D871D5B6276E81190020F437 /* Modal */,
 				D871D5AC276E7B710020F437 /* Cards */,
 				D871D5BB276E821F0020F437 /* Row */,
@@ -280,12 +280,12 @@
 				D871D58D276E773F0020F437 /* MainView.swift in Sources */,
 				D871D5B5276E80990020F437 /* DayView.swift in Sources */,
 				D871D5C9276E88110020F437 /* EmptyError.swift in Sources */,
+				D854E4DD276FE4ED0029F30D /* TaskView.swift in Sources */,
 				D871D5A3276E782F0020F437 /* ViewModel.swift in Sources */,
 				D871D5A7276E78FD0020F437 /* AppTheme.swift in Sources */,
 				D871D5AA276E7AE10020F437 /* FontModifiers.swift in Sources */,
 				D871D58B276E773F0020F437 /* GoalKeeperApp.swift in Sources */,
 				D871D5BF276E82B80020F437 /* GoalRowView.swift in Sources */,
-				D871D5C3276E84630020F437 /* TaskView.swift in Sources */,
 				D871D5C1276E83CF0020F437 /* GoalView.swift in Sources */,
 				D871D5B0276E7F1A0020F437 /* ErrorAlert.swift in Sources */,
 				D871D5B3276E7F970020F437 /* AppViewModifiers.swift in Sources */,

@@ -44,9 +44,21 @@ struct AreaView: View {
                         } label: {
                             GoalRowView(goal: goal)
                         }
-                    }
-                    .onDelete { i in
-                        viewModel.removeGoal(area: area, item: i)
+                        .swipeActions(edge: .trailing) {
+                            Button(role: .destructive) {
+                                let index = viewModel.findGoalIndex(goal: goal)
+                                viewModel.removeGoal(area: area, item: index)
+                            } label: {
+                                Label("Delete", systemImage: "trash")
+                            }
+                            
+                            Button {
+                                print("add to favorite")
+                            } label: {
+                                Label("Favorite", systemImage: "star")
+                            }
+                            .tint(.yellow)
+                        }
                     }
                     .listRowBackground(Color("WhiteBlack"))
                 }

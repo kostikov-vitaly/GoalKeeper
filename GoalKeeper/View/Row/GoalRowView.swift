@@ -9,6 +9,7 @@ import SwiftUI
 
 struct GoalRowView: View {
     
+    @EnvironmentObject var viewModel: ViewModel
     var goal: Goal
     
     var body: some View {
@@ -28,5 +29,6 @@ struct GoalRowView: View {
             .padding(.trailing, 4)
         }
         .modifier(Rubik_Text())
+        .frame(minHeight: 40)
     }
 }

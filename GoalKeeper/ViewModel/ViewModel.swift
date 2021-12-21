@@ -22,40 +22,37 @@ class ViewModel: ObservableObject {
     // working with objects
     
     //index finding
-    func findAreaIndex(area: Area) -> Int? {
+    func findAreaIndex(area: Area) -> Int {
         guard let areaIndex = areas.firstIndex(where: { item -> Bool in
             item.id == area.id
         }) else {
             print("finding... area index error")
-            return nil
+            return 0
         }
         return areaIndex
     }
     
-    func findAreaIndex(goal: Goal) -> Int? {
+    func findAreaIndex(goal: Goal) -> Int {
         guard let areaIndex = areas.firstIndex(where: { item -> Bool in
             item.goals.contains(where: { item -> Bool in
                 item.id == goal.id
             })
         }) else {
             print("finding... area index error")
-            return nil
+            return 0
         }
         return areaIndex
     }
     
-    func findGoalIndex(goal: Goal) -> Int? {
+    func findGoalIndex(goal: Goal) -> Int {
         
-        guard let areaIndex = findAreaIndex(goal: goal) else {
-            print("finding... area index error")
-            return nil
-        }
+        let areaIndex = findAreaIndex(goal: goal)
         
         guard let goalIndex = areas[areaIndex].goals.firstIndex(where: { item -> Bool in
             item.id == goal.id
         }) else {
             print("finding... goal index error")
-            return nil
+            return 0
         }
         return goalIndex
     }
@@ -64,49 +61,28 @@ class ViewModel: ObservableObject {
     func addGoalToArea(area: Area, name: String) {
         
         let goal = Goal(name: name, tasks: [])
-        
-        guard let areaIndex = findAreaIndex(area: area) else {
-            print("adding... area index error")
-            return
-        }
+        let areaIndex = findAreaIndex(area: area)
         areas[areaIndex].goals.append(goal)
     }
     
     func addTaskToGoal(goal: Goal, name: String) {
         
         let task = Task(name: name, taskDays: [Date()])
-        
-        guard let areaIndex = findAreaIndex(goal: goal) else {
-            print("adding... area index error")
-            return
-        }
-        
-        guard let goalIndex = findGoalIndex(goal: goal) else {
-            print("adding... goal index error")
-            return
-        }
-        
+        let areaIndex = findAreaIndex(goal: goal)
+        let goalIndex = findGoalIndex(goal: goal)
         areas[areaIndex].goals[goalIndex].tasks.append(task)
     }
     
     //removing
-    func removeGoal(area: Area, item: IndexSet) {
-        guard let areaIndex = findAreaIndex(area: area) else {
-            print("deleting... area index error")
-            return
-        }
-        areas[areaIndex].goals.remove(atOffsets: item)
+    func removeGoal(area: Area, item: Int) {
+        
+        let areaIndex = findAreaIndex(area: area)
+        areas[areaIndex].goals.remove(at: item)
     }
     
     func removeTask(goal: Goal, item: IndexSet) {
-        guard let areaIndex = findAreaIndex(goal: goal) else {
-            print("deleting... area index error")
-            return
-        }
-        guard let goalIndex = findGoalIndex(goal: goal) else {
-            print("deleting... goal index error")
-            return
-        }
+        let areaIndex = findAreaIndex(goal: goal)
+        let goalIndex = findGoalIndex(goal: goal)
         areas[areaIndex].goals[goalIndex].tasks.remove(atOffsets: item)
     }
     
