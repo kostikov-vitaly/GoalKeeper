@@ -73,7 +73,6 @@ struct AreaView: View {
             }
         }
         .navigationBarHidden(true)
-        .modifier(BackGesture(dragOffset: dragOffset))
     }
 }
 

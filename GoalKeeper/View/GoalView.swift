@@ -64,7 +64,6 @@ struct GoalView: View {
             }
         }
         .navigationBarHidden(true)
-        .modifier(BackGesture(dragOffset: dragOffset))
     }
 }
 

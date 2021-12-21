@@ -16,7 +16,6 @@ struct DayView: View {
     @GestureState var dragOffset = CGSize.zero
     
     var body: some View {
-        
         ZStack {
             Color("WhiteBlack")
                 .ignoresSafeArea(edges: .all)
@@ -50,8 +49,6 @@ struct DayView: View {
             }
         }
         .navigationBarHidden(true)
-        .modifier(BackGesture(dragOffset: dragOffset))
-        
     }
 }
 

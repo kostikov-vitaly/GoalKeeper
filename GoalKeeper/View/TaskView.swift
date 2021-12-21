@@ -46,7 +46,6 @@ struct TaskView: View {
             }
         }
         .navigationBarHidden(true)
-        .modifier(BackGesture(dragOffset: dragOffset))
     }
 }
 

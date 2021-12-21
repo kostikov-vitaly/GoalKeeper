@@ -20,17 +20,13 @@ extension View {
     }
 }
 
-struct BackGesture: ViewModifier {
-    
-    @GestureState var dragOffset: CGSize
-    @Environment(\.dismiss) var dismiss
-    
-    func body(content: Content) -> some View {
-        content
-            .gesture(DragGesture().updating($dragOffset, body: { (value, state, transition) in
-                if (value.startLocation.x < 50 && value.translation.width > 100) {
-                    dismiss()
-                }
-            }))
+extension UINavigationController: UIGestureRecognizerDelegate {
+    override open func viewDidLoad() {
+        super.viewDidLoad()
+        interactivePopGestureRecognizer?.delegate = self
+    }
+
+    public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        return viewControllers.count > 1
     }
 }
