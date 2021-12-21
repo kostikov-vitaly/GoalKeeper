@@ -11,6 +11,7 @@ struct TaskView: View {
     
     @Binding var task: Task
     
+    @GestureState var dragOffset = CGSize.zero
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
@@ -45,6 +46,7 @@ struct TaskView: View {
             }
         }
         .navigationBarHidden(true)
+        .modifier(BackGesture(dragOffset: dragOffset))
     }
 }
 

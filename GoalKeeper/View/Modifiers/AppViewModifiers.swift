@@ -19,3 +19,18 @@ extension View {
         }
     }
 }
+
+struct BackGesture: ViewModifier {
+    
+    @GestureState var dragOffset: CGSize
+    @Environment(\.dismiss) var dismiss
+    
+    func body(content: Content) -> some View {
+        content
+            .gesture(DragGesture().updating($dragOffset, body: { (value, state, transition) in
+                if (value.startLocation.x < 50 && value.translation.width > 100) {
+                    dismiss()
+                }
+            }))
+    }
+}

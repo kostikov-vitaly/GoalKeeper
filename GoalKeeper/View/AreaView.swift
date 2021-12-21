@@ -14,7 +14,8 @@ struct AreaView: View {
     @EnvironmentObject private var viewModel: ViewModel
     @Environment(\.dismiss) var dismiss
     
-    @State var isPresented_Area_AddGoal: Bool = false
+    @GestureState private var dragOffset = CGSize.zero
+    @State private var isPresented_Area_AddGoal: Bool = false
     var isFirst: Bool {
         area.goals.count == 0
     }
@@ -72,6 +73,7 @@ struct AreaView: View {
             }
         }
         .navigationBarHidden(true)
+        .modifier(BackGesture(dragOffset: dragOffset))
     }
 }
 

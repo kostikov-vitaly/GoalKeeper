@@ -14,7 +14,8 @@ struct GoalView: View {
     @EnvironmentObject private var viewModel: ViewModel
     @Environment(\.dismiss) var dismiss
     
-    @State var isPresented_Goal_AddTask: Bool = false
+    @GestureState var dragOffset = CGSize.zero
+    @State private var isPresented_Goal_AddTask: Bool = false
     var isFirst: Bool {
         goal.tasks.count == 0
     }
@@ -63,6 +64,7 @@ struct GoalView: View {
             }
         }
         .navigationBarHidden(true)
+        .modifier(BackGesture(dragOffset: dragOffset))
     }
 }
 
