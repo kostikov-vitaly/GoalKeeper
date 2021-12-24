@@ -13,8 +13,6 @@ struct DayView: View {
     
     @Environment(\.dismiss) var dismiss
     
-    @GestureState var dragOffset = CGSize.zero
-    
     var body: some View {
         ZStack {
             Color("WhiteBlack")

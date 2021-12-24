@@ -24,6 +24,7 @@ struct TaskView: View {
                     Spacer()
                     Text(task.name)
                         .modifier(Prime_Title())
+                        .lineLimit(1)
                     Spacer()
                     emptyTrailingNavSpace
                 }

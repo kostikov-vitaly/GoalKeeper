@@ -14,7 +14,6 @@ struct GoalView: View {
     @EnvironmentObject private var viewModel: ViewModel
     @Environment(\.dismiss) var dismiss
     
-    @GestureState var dragOffset = CGSize.zero
     @State private var isPresented_Goal_AddTask: Bool = false
     var isFirst: Bool {
         goal.tasks.count == 0
@@ -30,6 +29,7 @@ struct GoalView: View {
                     Spacer()
                     Text(goal.name)
                         .modifier(Prime_Title())
+                        .lineLimit(1)
                     Spacer()
                     
                     if isFirst {
@@ -47,11 +47,19 @@ struct GoalView: View {
                             Text(task.name)
                                 .tracking(0.5)
                                 .modifier(Rubik_Text())
+                                .frame(height: 40)
+                        }
+                        .swipeActions(edge: .trailing) {
+                            Button(action: {
+                                viewModel.removeTask(goal: goal, task: task)
+                            }) {
+                                Label("Delete", systemImage: "trash")
+                            }
                         }
                     }
-                    .onDelete { i in
-                        viewModel.removeTask(goal: goal, item: i)
-                    }
+//                    .onDelete { i in
+//                        viewModel.removeTask(goal: goal, item: i)
+//                    }
                     .listRowBackground(Color("WhiteBlack"))
                 }
                 .listStyle(.plain)
@@ -125,6 +133,7 @@ extension GoalView {
     
     struct AddFirstButton: View {
         
+        @EnvironmentObject var appTheme: AppTheme
         @Binding var isModal: Bool
         @Binding var goal: Goal
         
@@ -137,12 +146,13 @@ extension GoalView {
                     Text("Add your first task")
                         .tracking(0.5)
                         .modifier(Rubik_Text_Bold())
-                        .foregroundColor(Color("White"))
+                        .foregroundColor(.white)
                 }
                 .cornerRadius(10)
-                .padding(.horizontal, 20)
+                .padding(.horizontal, appTheme.isSmall ? 14 : 20)
                 .frame(maxWidth: .infinity, maxHeight: 56)
             }
+            .padding(.bottom, appTheme.isSmall ? 8 : 0)
             .sheet(isPresented: $isModal) { Goal_AddTask(goal: $goal) }
         }
     }

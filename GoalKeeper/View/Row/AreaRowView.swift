@@ -9,6 +9,8 @@ import SwiftUI
 
 struct AreaRowView: View {
     
+    @EnvironmentObject var appTheme: AppTheme
+    
     var area: Area
     
     var body: some View {
@@ -20,5 +22,6 @@ struct AreaRowView: View {
                 .modifier(Rubik_Text())
             Spacer()
         }
+        .frame(height: appTheme.isSmall ? 34 : 36)
     }
 }

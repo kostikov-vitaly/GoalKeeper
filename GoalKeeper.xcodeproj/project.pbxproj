@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D854E4DD276FE4ED0029F30D /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D854E4DC276FE4ED0029F30D /* TaskView.swift */; };
+		D86FF23D2774CBAE00063B55 /* TooManyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86FF23C2774CBAE00063B55 /* TooManyError.swift */; };
 		D871D58B276E773F0020F437 /* GoalKeeperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D871D58A276E773F0020F437 /* GoalKeeperApp.swift */; };
 		D871D58D276E773F0020F437 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D871D58C276E773F0020F437 /* MainView.swift */; };
 		D871D58F276E77410020F437 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D871D58E276E77410020F437 /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		D854E4DC276FE4ED0029F30D /* TaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
+		D86FF23C2774CBAE00063B55 /* TooManyError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooManyError.swift; sourceTree = "<group>"; };
 		D871D587276E773F0020F437 /* GoalKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoalKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D871D58A276E773F0020F437 /* GoalKeeperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalKeeperApp.swift; sourceTree = "<group>"; };
 		D871D58C276E773F0020F437 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				D871D5AF276E7F1A0020F437 /* ErrorAlert.swift */,
 				D871D5C6276E87DF0020F437 /* SameNameError.swift */,
 				D871D5C8276E88110020F437 /* EmptyError.swift */,
+				D86FF23C2774CBAE00063B55 /* TooManyError.swift */,
 			);
 			path = Errors;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				D871D5A3276E782F0020F437 /* ViewModel.swift in Sources */,
 				D871D5A7276E78FD0020F437 /* AppTheme.swift in Sources */,
 				D871D5AA276E7AE10020F437 /* FontModifiers.swift in Sources */,
+				D86FF23D2774CBAE00063B55 /* TooManyError.swift in Sources */,
 				D871D58B276E773F0020F437 /* GoalKeeperApp.swift in Sources */,
 				D871D5BF276E82B80020F437 /* GoalRowView.swift in Sources */,
 				D871D5C1276E83CF0020F437 /* GoalView.swift in Sources */,

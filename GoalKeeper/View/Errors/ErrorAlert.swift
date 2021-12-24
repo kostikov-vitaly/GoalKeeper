@@ -40,6 +40,7 @@ struct ErrorAlert: View {
                     dismissButton
                         .tracking(0.5)
                         .modifier(Rubik_Text())
+                        .frame(width: UIScreen.main.bounds.width - 40)
                 }
             }
             .padding(.top, 8)

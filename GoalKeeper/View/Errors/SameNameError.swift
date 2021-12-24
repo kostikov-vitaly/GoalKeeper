@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SameNameError: View {
     
-    @Binding var isSameName: Bool
+    @Binding var isError: Bool
     let title: String
     let message: String
     let dismissButton: String
@@ -27,11 +27,8 @@ struct SameNameError: View {
     }
     
     var body: some View {
-        if isSameName {
-            ErrorAlert(shown: $isSameName,
-                        title: Text(title),
-                        message: Text(message),
-                        dismissButton: Text(dismissButton))
+        if isError {
+            ErrorAlert(shown: $isError, title: Text(title), message: Text(message), dismissButton: Text(dismissButton))
         } else {
             EmptyView()
         }

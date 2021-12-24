@@ -52,16 +52,18 @@ struct Goal: Identifiable, Codable {
     var name: String
     var id: String
     var tasks: [Task]
+    var isActive: Bool
     
-    init(name: String, tasks: [Task]) {
+    init(name: String, tasks: [Task], isActive: Bool) {
         self.id = name
         self.name = name
         self.tasks = tasks
+        self.isActive = isActive
     }
 }
 
 extension Goal {
-    static var emptyGoal = Goal(name: "", tasks: [])
+    static var emptyGoal = Goal(name: "", tasks: [], isActive: true)
 }
 
 struct Task: Identifiable, Codable {
@@ -162,5 +164,19 @@ extension Day {
             array.append(Day(dayOffset: i))
         }
         return array
+    }
+}
+
+struct WeeklyDate: Identifiable, Codable {
+    let id: String
+    let weekday: String
+    var label: String
+    var isActive: Bool
+    
+    init(label: String, weekday: String, isActive: Bool) {
+        self.id = weekday
+        self.weekday = weekday
+        self.label = label
+        self.isActive = isActive
     }
 }

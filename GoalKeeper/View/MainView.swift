@@ -26,11 +26,11 @@ struct MainView: View {
             VStack(alignment: .leading, spacing: 0) {
                 
                 Section {
-                    VStack(alignment: .leading, spacing: 8) {
+                    VStack(alignment: .leading, spacing: appTheme.isSmall ? 6 : 10) {
                         HStack(alignment: .top) {
                             Text("Good afternoon!")
                                 .modifier(Prime_Header())
-                            .padding(.top, 48)
+                                .padding(.top, appTheme.isSmall ? 24 : 48)
                             Spacer()
                             Button(
                                 action: {
@@ -47,9 +47,8 @@ struct MainView: View {
                             .font(.custom("Rubik Regular", size: 21))
                             .opacity(0.6)
                     }
-                    .padding(.bottom, 24)
-                    .padding(.leading, 24)
-                    .padding(.trailing, 24)
+                    .padding(.horizontal, 22)
+                    .padding(.bottom, appTheme.isSmall ? 18 : 22)
                 }
                 
                 Section {
@@ -69,8 +68,9 @@ struct MainView: View {
                 Section {
                     Text("Areas of your life")
                         .modifier(Prime_Title())
-                        .padding()
-                        .padding(.leading, 4)
+                        .padding(.vertical, appTheme.isSmall ? 14 : 16)
+                        .padding(.horizontal, 20)
+                        .padding(.leading, 2)
                     List($areas) { $area in
                         NavigationLink(destination: AreaView(area: $area)) {
                             AreaRowView(area: area)
@@ -94,14 +94,15 @@ struct MainView: View {
                             Text("Add new goal")
                                 .tracking(0.5)
                                 .modifier(Rubik_Text_Bold())
-                                .foregroundColor(Color("White"))
+                                .foregroundColor(.white)
                         }
                         .cornerRadius(10)
-                        .padding(.horizontal, 20)
+                        .padding(.horizontal, appTheme.isSmall ? 14 : 20)
                         .frame(maxWidth: .infinity, maxHeight: 56)
                     }
                     .sheet(isPresented: $isPresented_Main_AddGoal) { Main_AddGoal() }
                 }
+                .padding(.bottom, appTheme.isSmall ? 8 : 0)
             }
         }
     }

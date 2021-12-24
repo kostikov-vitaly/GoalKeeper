@@ -9,9 +9,10 @@ import SwiftUI
 
 class ViewModel: ObservableObject {
     
+    @Environment(\.dismiss) var dismiss
+    
     @Published var areas: [Area] = []
     @Published var days: [Day] = Day.loadingData
-    @Environment(\.dismiss) var dismiss
     
     // calendar stuff
     func isToday(day: Day) -> Bool {
@@ -26,7 +27,7 @@ class ViewModel: ObservableObject {
         guard let areaIndex = areas.firstIndex(where: { item -> Bool in
             item.id == area.id
         }) else {
-            print("finding... area index error")
+            print("finding area index... couldn't find this area in areas array")
             return 0
         }
         return areaIndex
@@ -38,7 +39,7 @@ class ViewModel: ObservableObject {
                 item.id == goal.id
             })
         }) else {
-            print("finding... area index error")
+            print("finding area index... couldn't find an area for this goal")
             return 0
         }
         return areaIndex
@@ -51,7 +52,7 @@ class ViewModel: ObservableObject {
         guard let goalIndex = areas[areaIndex].goals.firstIndex(where: { item -> Bool in
             item.id == goal.id
         }) else {
-            print("finding... goal index error")
+            print("finding goal index... couldn't find this goal")
             return 0
         }
         return goalIndex
@@ -60,7 +61,7 @@ class ViewModel: ObservableObject {
     //adding
     func addGoalToArea(area: Area, name: String) {
         
-        let goal = Goal(name: name, tasks: [])
+        let goal = Goal(name: name, tasks: [], isActive: true)
         let areaIndex = findAreaIndex(area: area)
         areas[areaIndex].goals.append(goal)
     }
@@ -74,16 +75,42 @@ class ViewModel: ObservableObject {
     }
     
     //removing
-    func removeGoal(area: Area, item: Int) {
+    func removeGoal(area: Area, goal: Goal) {
         
         let areaIndex = findAreaIndex(area: area)
-        areas[areaIndex].goals.remove(at: item)
+        areas[areaIndex].goals.removeAll(where: { item -> Bool in
+            item.id == goal.id
+        })
     }
     
-    func removeTask(goal: Goal, item: IndexSet) {
+    func removeTask(goal: Goal, task: Task) {
+        
         let areaIndex = findAreaIndex(goal: goal)
         let goalIndex = findGoalIndex(goal: goal)
-        areas[areaIndex].goals[goalIndex].tasks.remove(atOffsets: item)
+        areas[areaIndex].goals[goalIndex].tasks.removeAll(where: { item -> Bool in
+            item.id == task.id
+        })
+    }
+    
+    //goal counting
+    func activeGoalsCount(area: Area) -> Int {
+        areas.flatMap( {$0.goals} ).filter( {$0.isActive == true} ).count
+    }
+    
+    func inactiveGoalsCount(area: Area) -> Int {
+        areas.flatMap( {$0.goals} ).filter( {$0.isActive == false} ).count
+    }
+    
+    func checkGoalsNumberWhenAdd(area: Area) -> Bool {
+        activeGoalsCount(area: area) == 5 || inactiveGoalsCount(area: area) == 4
+    }
+    
+    func checkGoalsNumberWhenArchive(area: Area) -> Bool {
+        inactiveGoalsCount(area: area) == 4
+    }
+    
+    func checkGoalsNumberWhenReturn(area: Area) -> Bool {
+        activeGoalsCount(area: area) == 5
     }
     
     // data processing

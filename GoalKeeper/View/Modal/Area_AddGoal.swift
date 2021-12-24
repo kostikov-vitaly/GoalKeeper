@@ -18,89 +18,89 @@ struct Area_AddGoal: View {
     @State private var goalName: String = ""
     @State private var isSameName = false
     @State private var isEmptyName = false
+    @State private var isManyGoals = false
     
     var body: some View {
         ZStack {
-            ZStack(alignment: .top) {
-                Color("AccentBlack")
-                    .ignoresSafeArea(edges: .all)
+            VStack(alignment: .leading, spacing: 0) {
+                Text("New goal")
+                    .modifier(Prime_Header())
+                    .foregroundColor(Color("BlackWhite"))
+                    .padding(.top, 80)
+                    .padding(.horizontal, 24)
                 
-                VStack(alignment: .leading, spacing: 0) {
-                    Text("New goal")
-                        .modifier(Prime_Header())
+                VStack(alignment: .leading, spacing: 12) {
+                    Text("Goal name")
+                        .modifier(Prime_Title())
                         .foregroundColor(Color("White"))
-                        .padding(.leading, 22)
-                        .padding(.trailing, 20)
-                        .padding(.top, 80)
+                        .padding(.top, 26)
+                        .padding(.horizontal, 20)
                     
-                    VStack(alignment: .leading, spacing: 12) {
-                        Text("Goal name")
-                            .modifier(Prime_Title())
-                            .padding(.top, 26)
-                            .padding(.horizontal, 20)
-                            .foregroundColor(Color("BlackWhite"))
-                        TextField(text: $goalName) {
-                            Text("What do you wanna reach?")
-                                .tracking(0.5)
-                        }
+                    TextField("", text: $goalName)
+                        .accentColor(Color.white)
                         .placeholder(when: goalName.isEmpty) {
                             Text("What do you wanna reach?")
                                 .tracking(0.5)
-                                .foregroundColor(Color("PlaceholderColor"))
+                                .foregroundColor(Color("White"))
                         }
                         .lineSpacing(0)
                         .modifier(Rubik_Text())
-                        .foregroundColor(.accentColor)
-                        .padding(.bottom, 20)
+                        .foregroundColor(Color("White"))
                         .padding(.horizontal, 20)
-                    }
-                    .background(Color("PlaceholderBackground"))
-                    .cornerRadius(10)
-                    .padding()
-                    .padding(.top, 16)
-                    
-                    Text("Little hint. You will be able to close your goals faster if they are made according to the SMART system. This condition will also help the goals to be more effective for your life.")
-                        .tracking(0.5)
-                        .modifier(Rubik_Info())
-                        .foregroundColor(Color("White").opacity(appTheme.isLight ? 0.85 : 0.6))
-                        .padding(.leading, 22)
-                        .padding(.trailing, 20)
-                        .padding(.top, 4)
-                    Spacer()
-                    
-                    Button(action: {
-                        if goalName.isEmpty {
-                            isEmptyName = true
-                        } else if !viewModel.areas.flatMap({$0.goals}).map({$0.name.lowercased()}).contains(goalName.lowercased()) {
-                            viewModel.addGoalToArea(area: area, name: goalName)
-                            dismiss()
-                        } else {
-                            isSameName = true
-                        }
-                    }) {
-                        ZStack{
-                            Color("White")
-                            Text("Create")
-                                .tracking(0.5)
-                                .modifier(Rubik_Text_Bold())
-                                .foregroundColor(Color("AccentBlack"))
-                        }
-                        .cornerRadius(10)
-                        .frame(maxWidth: .infinity, maxHeight: 56)
-                    }
-                    .padding(.horizontal, 20)
+                        .padding(.bottom, 22)
                 }
+                .background(Color("PlaceholderBackground"))
+                .cornerRadius(10)
+                .padding(.top, 20)
+                .padding(.horizontal, 20)
+                .padding(.bottom, 16)
+                
+                Text("* Little hint. You will be able to close your goals faster if they are made according to the SMART system. This condition will also help the goals to be more effective for your life.")
+                    .tracking(0.5)
+                    .modifier(Rubik_Info())
+                    .foregroundColor(Color("BlackWhite").opacity(0.6))
+                    .padding(.horizontal, 24)
+                    .padding(.bottom, 22)
+                
+                Spacer()
+                
+                Button(action: {
+                    if goalName.isEmpty {
+                        isEmptyName = true
+                    } else if viewModel.checkGoalsNumberWhenAdd(area: area) {
+                            isManyGoals = true
+                    } else if !viewModel.areas.flatMap({$0.goals}).map({$0.name.lowercased()}).contains(goalName.lowercased()) {
+                        viewModel.addGoalToArea(area: area, name: goalName)
+                        dismiss()
+                    } else {
+                        isSameName = true
+                    }
+                    
+                }) {
+                    ZStack{
+                        goalName.isEmpty ? appTheme.InactiveButtonColor["fill"] : appTheme.ActiveButtonColor["fill"]
+                        Text("Create")
+                            .tracking(0.5)
+                            .modifier(Rubik_Text_Bold())
+                            .foregroundColor(goalName.isEmpty ? appTheme.InactiveButtonColor["color"] : appTheme.ActiveButtonColor["color"])
+                    }
+                    .cornerRadius(10)
+                    .frame(maxWidth: .infinity, maxHeight: 56)
+                }
+                .padding(.horizontal, appTheme.isSmall ? 14 : 20)
+                .padding(.bottom, appTheme.isSmall ? 8 : 0)
             }
             .ignoresSafeArea(.keyboard, edges: .bottom)
-            .blur(radius: isSameName || isEmptyName ? 10 : 0)
-            .overlay(isSameName || isEmptyName ? Color.black.opacity(0.35).ignoresSafeArea(.all) : nil)
-            .disabled(isSameName || isEmptyName)
+            .blur(radius: isSameName || isEmptyName || isManyGoals ? 10 : 0)
+            .overlay(isSameName || isEmptyName || isManyGoals ? Color.black.opacity(0.35).ignoresSafeArea(.all) : nil)
+            .disabled(isSameName || isEmptyName || isManyGoals)
             
-            SameNameError(isSameName: $isSameName,
+            TooManyError(isError: $isManyGoals)
+            SameNameError(isError: $isSameName,
                           title: SameNameError.TitleText.goal.rawValue,
                           message: SameNameError.MessageText.goal.rawValue,
                           dismissButton: SameNameError.DismissButtonText.goal.rawValue)
-            EmptyNameError(isEmptyName: $isEmptyName,
+            EmptyNameError(isError: $isEmptyName,
                            title: EmptyNameError.TitleText.goal.rawValue,
                            message: EmptyNameError.MessageText.goal.rawValue,
                            dismissButton: EmptyNameError.DismissButtonText.goal.rawValue)

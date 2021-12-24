@@ -10,6 +10,9 @@ import SwiftUI
 class AppTheme: ObservableObject {
     
     @Published var appColorScheme: ColorScheme? = .light
+    @Published var isSmall: Bool = UIScreen.main.bounds.height < 800
+    @Published var ActiveButtonColor: [String: Color] = ["fill": Color("AccentWhite"), "color": Color("WhiteBlack")]
+    @Published var InactiveButtonColor: [String: Color] = ["fill": Color("BlackWhite").opacity(0.1), "color": Color("BlackWhite").opacity(0.5)]
     
     func chooseAppScheme() {
         appColorScheme = appColorScheme == .light ? .dark : .light
